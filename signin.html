@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <title>Swiggy Sign In</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="shortcut icon" href="logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-100 flex flex-col items-center min-h-screen">
+    
+    <!-- Header -->
+    <header class="w-full flex items-center justify-between p-4 shadow-lg bg-orange-500">
+        <div class="flex items-center space-x-4">
+            <div class="text-3xl font-bold text-white">
+                <img src="logo.webp" alt="swiggy logo" width="40px" height="40px">
+            </div>
+            <select class="dropdown p-2 rounded-lg bg-white shadow-md">
+                <option>Choose Location</option>
+                <option>Delhi</option>
+                <option>Mumbai</option>
+                <option>Bangalore</option>
+            </select>
+        </div>
+        
+        <nav class="nav-links flex space-x-6">
+            <a href="offers.html" class="text-white hover:underline"><i class="fa-solid fa-percent"></i> Offers</a>
+            <a href="help.html" class="text-white hover:underline"><i class="fa-solid fa-question"></i> Help</a>
+            <a href="signin.html" class="text-white hover:underline"><i class="fa-solid fa-right-to-bracket"></i> Sign in</a>
+            <a href="cart.html" class="text-white hover:underline"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+            <input type="text" placeholder="Search..." class="search-box p-2 rounded-lg border border-gray-300">
+        </nav>
+    </header>
+
+    <!-- Sign-in Section -->
+    <main class="flex flex-col items-center justify-center flex-grow w-full mt-10">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-96 opacity-0" id="signin-box">
+            <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">Sign In</h2>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Email</label>
+                    <input type="email" placeholder="Enter your email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 transition-all">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Password</label>
+                    <input type="password" placeholder="Enter your password" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 transition-all">
+                </div>
+                <button class="w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition-all">Sign In</button>
+            </form>
+            <p class="text-center text-gray-600 mt-4">
+                Don't have an account? <a href="#" class="text-orange-500 hover:underline">Sign up</a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+    
+            <div class="footer-section">
+                <h4>Get the App</h4>
+                <div class="app-icons">
+                    <a href="#"><img src="googleplay.png" alt="Google Play"></a>
+                    <a href="#"><img src="appstore.jpeg" alt="App Store"></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Swiggy. All Rights Reserved.</p>
+            <p>Developed by Lakshmi Syamala</p>
+        </div>
+    </footer>
+    <script>
+        // Animate the Sign-in Box
+        gsap.to("#signin-box", {opacity: 1, y: -20, duration: 1, ease: "power2.out"});
+    </script>
+
+</body>
+</html>

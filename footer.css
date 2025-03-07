@@ -1,0 +1,80 @@
+/* Footer Styling */
+.footer {
+    background-color: #222; /* Dark background */
+    color: white;
+    padding: 30px 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Footer Sections */
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+/* Footer Headings */
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ff7f50; /* Orange shade */
+    text-transform: uppercase;
+}
+
+/* Footer Links */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ff5733; /* Hover effect */
+}
+
+/* Social Media Icons */
+.social-icons a {
+    font-size: 20px;
+    color: white;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff7f50;
+}
+
+/* App Icons */
+.app-icons img {
+    width: 50px;
+    margin: 10px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    background-color: #111;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 13px;
+}

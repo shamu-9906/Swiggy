@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <title>Swiggy Cart</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="shortcut icon" href="logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="w-full flex items-center justify-between p-4 shadow-lg bg-orange-500">
+        <div class="flex items-center space-x-4">
+            <div class="text-3xl font-bold text-white">
+                <img src="logo.webp" alt="Swiggy Logo" width="40px" height="40px">
+            </div>
+            <select class="dropdown p-2 rounded-lg bg-white shadow-md">
+                <option>Choose Location</option>
+                <option>Delhi</option>
+                <option>Mumbai</option>
+                <option>Bangalore</option>
+            </select>
+        </div>
+        
+        <nav class="flex space-x-6">
+            <a href="offers.html" class="text-white hover:underline"><i class="fa-solid fa-percent"></i> Offers</a>
+            <a href="help.html" class="text-white hover:underline"><i class="fa-solid fa-question"></i> Help</a>
+            <a href="signin.html" class="text-white hover:underline"><i class="fa-solid fa-right-to-bracket"></i> Sign in</a>
+            <a href="cart.html" class="text-white hover:underline"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+            <input type="text" placeholder="Search..." class="search-box p-2 rounded-lg border border-gray-300">
+        </nav>
+    </header>
+
+    <!-- Cart Section -->
+    <main class="flex flex-col items-center flex-grow p-6">
+        <h1 class="text-3xl font-bold mb-6 text-gray-800">Your Cart</h1>
+
+        <div class="w-full max-w-2xl bg-white p-6 rounded-lg shadow-lg opacity-0" id="cart-box">
+            <div class="space-y-4" id="cart-items">
+                <!-- Cart Item 1 -->
+                <div class="flex items-center justify-between border-b pb-3 hover:bg-gray-100 p-3 rounded-lg transition">
+                    <div class="flex items-center space-x-4">
+                        <img src="burger.jpeg" alt="Food" class="w-16 h-16 rounded-lg">
+                        <div>
+                            <h3 class="text-lg font-semibold">Delicious Burger</h3>
+                            <p class="text-gray-600">₹150</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button class="bg-orange-500 text-white px-3 py-1 rounded-md hover:bg-orange-600 transition" onclick="updateQuantity(this, -1)">-</button>
+                        <span class="text-lg font-semibold">1</span>
+                        <button class="bg-orange-500 text-white px-3 py-1 rounded-md hover:bg-orange-600 transition" onclick="updateQuantity(this, 1)">+</button>
+                    </div>
+                </div>
+
+                <!-- Cart Item 2 -->
+                <div class="flex items-center justify-between border-b pb-3 hover:bg-gray-100 p-3 rounded-lg transition">
+                    <div class="flex items-center space-x-4">
+                        <img src="pizza.jpeg" alt="Food" class="w-16 h-16 rounded-lg">
+                        <div>
+                            <h3 class="text-lg font-semibold">Cheese Pizza</h3>
+                            <p class="text-gray-600">₹250</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button class="bg-orange-500 text-white px-3 py-1 rounded-md hover:bg-orange-600 transition" onclick="updateQuantity(this, -1)">-</button>
+                        <span class="text-lg font-semibold">1</span>
+                        <button class="bg-orange-500 text-white px-3 py-1 rounded-md hover:bg-orange-600 transition" onclick="updateQuantity(this, 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between mt-4 text-lg font-semibold">
+                <span>Total:</span>
+                <span id="total-price">₹400</span>
+            </div>
+
+            <button class="w-full bg-green-500 text-white py-2 rounded-lg mt-4 hover:bg-green-600 transition-all transform hover:scale-105">Checkout</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+    
+            <div class="footer-section">
+                <h4>Get the App</h4>
+                <div class="app-icons">
+                    <a href="#"><img src="googleplay.png" alt="Google Play"></a>
+                    <a href="#"><img src="appstore.jpeg" alt="App Store"></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Swiggy. All Rights Reserved.</p>
+            <p>Developed by Lakshmi Syamala</p>
+        </div>
+    </footer>
+    <script>
+        // GSAP animation for cart box
+        gsap.to("#cart-box", { opacity: 1, y: -20, duration: 1, ease: "power2.out" });
+
+        // Function to update item quantity
+        function updateQuantity(button, change) {
+            let quantityElement = button.parentElement.querySelector("span");
+            let currentQuantity = parseInt(quantityElement.textContent);
+            let newQuantity = Math.max(1, currentQuantity + change); // Prevent going below 1
+            quantityElement.textContent = newQuantity;
+
+            // Update total price
+            updateTotal();
+        }
+
+        // Function to calculate total price
+        function updateTotal() {
+            let prices = [150, 250]; // Prices of items in the cart
+            let quantities = document.querySelectorAll("#cart-items span.text-lg");
+            let total = 0;
+
+            quantities.forEach((qty, index) => {
+                total += parseInt(qty.textContent) * prices[index];
+            });
+
+            document.getElementById("total-price").textContent = "₹" + total;
+        }
+    </script>
+
+</body>
+</html>
